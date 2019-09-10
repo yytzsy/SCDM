@@ -1,14 +1,17 @@
 # SCDM
-Code for the paper: Semantic Conditioned Dynamic Modulation for Temporal Sentence Grounding in Videos
-
-# Sentence Specified Dynamic Video Thumbnail Generation
-by Yitian Yuan, Lin Ma and Wenwu Zhu
+Code for the paper: "Semantic Conditioned Dynamic Modulation for Temporal Sentence Grounding in Videos"
 
 ## Introduction
  
 Temporal sentence grounding (TSG) in videos aims to detect and localize one target video segment, which semantically corresponds to a given sentence query. We propose a semantic conditioned dynamic modulation (SCDM) mechanism to help solve the TSG problem, which relies on the sentence semantics to modulate the temporal convolution operations for better correlating and composing the sentence-related video contents over time.
 
-## Data
+## Data preparation
+
+First, download the following files into the 'data' dir:
+* extracted video features: charades_i3d_rgb.hdf5, activitynet_c3d_fc6_stride_1s.hdf5, tacos_c3d_fc6_nonoverlap.hdf5
+* word embeddings: 
+Then, download the preprocessed .h5 data for the Charades-STA dataset:
+* h5 data
 
 The 'dataset' folder contains the annotated dataset for sentence specified dynamic video thumbnail generation, as well as other auxiliary data. Concrete annotation process for the dataset can be found in our paper.
 
