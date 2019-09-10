@@ -22,16 +22,19 @@ As denoted in our paper, we perform the temporal sentence grounding task in thre
 ```
 python generate_charades_data.py
 ```
-If you have download the .h5 data for the Charades-STA dataset, you can ignore this step. Preprocessed data for the Charades dataset will be generated into the './data/Charades/h5py/' folder.
+If you have downloaded the .h5 data for the Charades-STA dataset, you can ignore this step. Preprocessed data will be put into the './data/Charades/h5py/' folder.
 
 * Go to the '**./grounding/TACOS/data_preparation/**' folder, and run:
 ```
 python generate_tacos_data.py
 ```
+Preprocessed data will be put into the './data/TACOS/h5py/' folder.
+
 * Go to the '**./grounding/ActivityNet/data_preparation/**' folder, and run:
 ```
 python generate_anet_data.py
 ```
+Preprocessed data will be put into the './data/ActivityNet/h5py/' folder.
 
 #### ./dataset/glove.840B.300d_dict.npy
 * Glove word embeddings in our work, please download the file [glove.840B.300d_dict.npy](http://nlp.stanford.edu/data/glove.840B.300d.zip) in this folder. 
