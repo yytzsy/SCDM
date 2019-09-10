@@ -51,7 +51,7 @@ python run_charades_scdm.py --task test
 ```
 for model testing. Other variant models are similar to train and test.
 
-* For the TACoS and ActivityNet Captions dataset, we only provide the proposed SCDM model in the '**./grounding/xxx/src_SCDM**' folder. The training and testing process are similar to the Charades-STA dataset.
+* For the TACoS and ActivityNet Captions dataset, we only provide the proposed SCDM model implementation in the '**./grounding/xxx/src_SCDM**' folder. The training and testing process are similar to the Charades-STA dataset.
 * Checkpoints of saved trained models for these datasets are provided in the '**./grounding/xxx/model/**' folder. You can use these checkpoints to reproduce the results in the paper (not exactly the same, but almost).
 
 ## Citation
