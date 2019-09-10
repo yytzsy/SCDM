@@ -5,6 +5,8 @@ Code for the paper: "Semantic Conditioned Dynamic Modulation for Temporal Senten
  
 Temporal sentence grounding (TSG) in videos aims to detect and localize one target video segment, which semantically corresponds to a given sentence query. We propose a semantic conditioned dynamic modulation (SCDM) mechanism to help solve the TSG problem, which relies on the sentence semantics to modulate the temporal convolution operations for better correlating and composing the sentence-related video contents over time.
 
+![](https://github.com/yytzsy/SCDM/blob/master/task.PNG)
+
 ## Download Features and Example Preprocessed Data
 
 First, download the following files into the '**./data**' folder:
