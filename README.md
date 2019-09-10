@@ -36,7 +36,7 @@ python generate_anet_data.py
 ```
 Preprocessed data for the ActivityNet Captions dataset will be put into the './data/ActivityNet/h5py/' folder.
 
-## Model training and testing
+## Model Training and Testing
 * For the Charades-STA dataset, the proposed model and all its variant model are provided. For example, the proposed SCDM model are in the '**./grounding/Charades-STA/src_SCDM**' folder, run:
 ```
 python run_charades_scdm.py --task train
