@@ -16,7 +16,7 @@ Then, download the preprocessed .h5 data for the Charades-STA dataset, and put i
 
 ## Data Preprocessing
 
-As denoted in our paper, we perform the temporal sentence grounding task in three dataset: Charades-STA, ActivityNet Captions, and TACoS. Before the model training and testing in these three dataset, please preprocess the data first. 
+As denoted in our paper, we perform the temporal sentence grounding task in three datasets: Charades-STA, ActivityNet Captions, and TACoS. Before the model training and testing in these three datasets, please preprocess the data first. 
 
 * Go to the '**./grounding/Charades-STA/data_preparation/**' folder, and run:
 ```
