@@ -5,16 +5,33 @@ Code for the paper: "Semantic Conditioned Dynamic Modulation for Temporal Senten
  
 Temporal sentence grounding (TSG) in videos aims to detect and localize one target video segment, which semantically corresponds to a given sentence query. We propose a semantic conditioned dynamic modulation (SCDM) mechanism to help solve the TSG problem, which relies on the sentence semantics to modulate the temporal convolution operations for better correlating and composing the sentence-related video contents over time.
 
-## Data preparation
+## Download Features and Example Preprocessed Data
 
-First, download the following files into the 'data' dir:
+First, download the following files into the '**./data**' folder:
 * Extracted video features: charades_i3d_rgb.hdf5, activitynet_c3d_fc6_stride_1s.hdf5, tacos_c3d_fc6_nonoverlap.hdf5
 * Glove word embeddings used in our work, please download the file [glove.840B.300d_dict.npy](http://nlp.stanford.edu/data/glove.840B.300d.zip).
 
-Then, download the preprocessed .h5 data for the Charades-STA dataset:
+Then, download the preprocessed .h5 data for the Charades-STA dataset, and put it into the '**./data/Charades**' folder. Actually, we also provide the code to preprocess the data, you can also generate by yourself.
 * h5 data
 
-The 'dataset' folder contains the annotated dataset for sentence specified dynamic video thumbnail generation, as well as other auxiliary data. Concrete annotation process for the dataset can be found in our paper.
+## Preprocess the data for model training and testing
+
+As denoted in our paper, we perform the temporal sentence grounding task in three dataset: Charades-STA, ActivityNet Captions, and TACoS. Before the model training and testing in these three dataset, please preprocess the data first. 
+
+* Go to the '**./grounding/Charades-STA/data_preparation/**' folder, and run:
+```
+python generate_charades_data.py
+```
+If you have download the .h5 data for the Charades-STA dataset, you can ignore this step. Preprocessed data for the Charades dataset will be generated into the './data/Charades/h5py/' folder.
+
+* Go to the '**./grounding/TACOS/data_preparation/**' folder, and run:
+```
+python generate_tacos_data.py
+```
+* Go to the '**./grounding/ActivityNet/data_preparation/**' folder, and run:
+```
+python generate_anet_data.py
+```
 
 #### ./dataset/glove.840B.300d_dict.npy
 * Glove word embeddings in our work, please download the file [glove.840B.300d_dict.npy](http://nlp.stanford.edu/data/glove.840B.300d.zip) in this folder. 
