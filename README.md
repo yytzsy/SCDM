@@ -9,7 +9,7 @@ Temporal sentence grounding (TSG) in videos aims to detect and localize one targ
 
 First, download the following files into the '**./data**' folder:
 * Extracted video features: charades_i3d_rgb.hdf5, activitynet_c3d_fc6_stride_1s.hdf5, tacos_c3d_fc6_nonoverlap.hdf5
-* Glove word embeddings used in our work, please download the file [glove.840B.300d_dict.npy](http://nlp.stanford.edu/data/glove.840B.300d.zip).
+* Glove word embeddings used in our work, please download [glove.840B.300d_dict.npy](http://nlp.stanford.edu/data/glove.840B.300d.zip).
 
 Then, download the preprocessed .h5 data for the Charades-STA dataset, and put it into the '**./data/Charades**' folder. Actually, we have provided the code to preprocess the data, and you can also generate by yourself.
 * h5 data
