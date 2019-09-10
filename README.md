@@ -41,7 +41,7 @@ Preprocessed data for the ActivityNet Captions dataset will be put into the './d
 ## Model Training and Testing
 ![](https://github.com/yytzsy/SCDM/blob/master/model.PNG)
 
-* For the Charades-STA dataset, the proposed model and all its variant models are provided. For example, the proposed SCDM model are in the '**./grounding/Charades-STA/src_SCDM**' folder, run:
+* For the Charades-STA dataset, the proposed model and all its variant models are provided. For example, the proposed SCDM model implementation are in the '**./grounding/Charades-STA/src_SCDM**' folder, run:
 ```
 python run_charades_scdm.py --task train
 ```
