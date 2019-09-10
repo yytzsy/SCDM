@@ -14,7 +14,7 @@ First, download the following files into the '**./data**' folder:
 * Glove word embeddings used in our work, please download [glove.840B.300d_dict.npy](http://nlp.stanford.edu/data/glove.840B.300d.zip).
 
 Then, download the preprocessed .h5 data for the Charades-STA dataset, and put it into the '**./data/Charades**' folder. Actually, we have provided the code to preprocess the data, and you can also generate the preprocessed data by yourself.
-* h5 data
+* [h5 data](https://drive.google.com/drive/folders/1THd38mgcePXiGa-lkbYdQSP_iXZKr5Lw?usp=sharing)
 
 ## Data Preprocessing
 
