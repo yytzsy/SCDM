@@ -450,7 +450,7 @@ def test(model_save_dir, result_save_dir):
 
         epoch_exact = epoch + test_epoch_start
 
-        if os.path.exists(result_save_dir+'/'+str(epoch_exact)+'.pkl'):
+        if os.path.exists(result_save_dir+'/'+str(epoch_exact)+'.npy'):
             continue
         with tf.device("/cpu:0"):
             saver.restore(sess, tmp[0]+'model-'+str(epoch_exact))
@@ -511,10 +511,36 @@ def test(model_save_dir, result_save_dir):
                             expand_anchor_list.append(all_anchor_list[anchor_group_id][anchor_id][kk])
                        
 
-                sort_index = np.argsort(predict_overlap_list)[::-1]
-                sort_score = np.sort(predict_overlap_list)[::-1]
-                sort_segment =[]
-                for index in sort_index:
+                # sort_index = np.argsort(predict_overlap_list)[::-1]
+                # sort_score = np.sort(predict_overlap_list)[::-1]
+                # sort_segment =[]
+                # for index in sort_index:
+                #     anchor = expand_anchor_list[index]
+                #     anchor_center = (anchor[1] - anchor[0]) * 0.5 + anchor[0]
+                #     anchor_width = anchor[1] - anchor[0]
+                #     center_offset = predict_center_list[index]
+                #     width_offset = predict_width_list[index]
+                #     p_center = anchor_center+0.1*anchor_width*center_offset
+                #     p_width =anchor_width*np.exp(0.1*width_offset)
+                #     p_left = max(0, p_center-p_width*0.5)
+                #     p_right = min(options['sample_len'], p_center+p_width*0.5)
+                #     sort_segment.append([p_left,p_right])
+
+                # result.append([current_batch['video_name'][batch_id],\
+                #                current_batch['ground_interval'][batch_id],\
+                #                current_batch['sentence'][batch_id],\
+                #                sort_segment,\
+                #                current_batch['video_duration'][batch_id],\
+                #                sort_score,\
+                #                predict_overlap_list,\
+                #                predict_center_list,\
+                #                predict_width_list]
+                #                )
+
+                a_left = []
+                a_right = []
+                a_score = []
+                for index in range(len(predict_overlap_list)):
                     anchor = expand_anchor_list[index]
                     anchor_center = (anchor[1] - anchor[0]) * 0.5 + anchor[0]
                     anchor_width = anchor[1] - anchor[0]
@@ -524,14 +550,24 @@ def test(model_save_dir, result_save_dir):
                     p_width =anchor_width*np.exp(0.1*width_offset)
                     p_left = max(0, p_center-p_width*0.5)
                     p_right = min(options['sample_len'], p_center+p_width*0.5)
-                    sort_segment.append([p_left,p_right])
+                    if p_right - p_left > current_batch['video_duration'][batch_id]:
+                        continue
+                    a_left.append(p_left)
+                    a_right.append(p_right)
+                    a_score.append(predict_overlap_list[index])
+                picks = nms_temporal(a_left,a_right,a_score,0.55)
+                process_segment = []
+                process_score = []
+                for pick in picks:
+                    process_segment.append([a_left[pick],a_right[pick]])
+                    process_score.append(a_score[pick])
 
                 result.append([current_batch['video_name'][batch_id],\
                                current_batch['ground_interval'][batch_id],\
                                current_batch['sentence'][batch_id],\
-                               sort_segment,\
+                               process_segment,\
                                current_batch['video_duration'][batch_id],\
-                               sort_score,\
+                               process_score,\
                                predict_overlap_list,\
                                predict_center_list,\
                                predict_width_list]
