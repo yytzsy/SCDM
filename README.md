@@ -56,10 +56,11 @@ for model testing. Other variant models are similar to train and test.
 
 ## Citation
 ```
-@inproceedings{SCDM19,
+@inproceedings{yuan2019semantic,
   title={Semantic Conditioned Dynamic Modulation for Temporal Sentence Grounding in Videos},
-  author={Yitian Yuan, Lin Ma, Jingwen Wang, Wei Liu and Wenwu Zhu},
-  booktitle={Proceedings of the Thirty-third Conference on Neural Information Processing Systems (Neurips 2019)},
-  year={2019},
+  author={Yuan, Yitian and Ma, Lin and Wang, Jingwen and Liu, Wei and Zhu, Wenwu},
+  booktitle={Advances in Neural Information Processing Systems},
+  pages={534--544},
+  year={2019}
 }
 ```
