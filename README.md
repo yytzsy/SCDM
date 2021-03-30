@@ -13,9 +13,6 @@ First, download the following files into the '**./data**' folder:
 * Extracted video features: [charades_i3d_rgb.hdf5](https://drive.google.com/file/d/1P-kfWOQoHzSxd8vNpogNGyx8Jc4TKj4E/view?usp=sharing), [activitynet_c3d_fc6_stride_1s.hdf5](https://drive.google.com/file/d/1X8GT1MohStPfaoTlDiuzZAHkas5Qt3t8/view?usp=sharing), [tacos_c3d_fc6_nonoverlap.hdf5](https://drive.google.com/file/d/1kK_FTo6USmPhO1vam3uvBMtJ3QChUblm/view?usp=sharing)
 * For glove word embeddings used in our work, please download [glove.840B.300d.zip](http://nlp.stanford.edu/data/glove.840B.300d.zip), and preprocess the word embedding .txt file to a glove.840B.300d_dict.npy file, making it a dict whose key is a word and the corresponding value is the 300-d word embedding. 
 
-Then, download the preprocessed .h5 data for the Charades-STA dataset, and put it into the '**./data/Charades**' folder. Actually, we have provided the code to preprocess the data, and you can also generate the preprocessed data by yourself.
-* [h5 data](https://drive.google.com/drive/folders/1THd38mgcePXiGa-lkbYdQSP_iXZKr5Lw?usp=sharing)
-
 ## Data Preprocessing
 
 As denoted in our paper, we perform the temporal sentence grounding task in three datasets: Charades-STA, ActivityNet Captions, and TACoS. Before the model training and testing in these three datasets, please preprocess the data first. 
@@ -24,7 +21,7 @@ As denoted in our paper, we perform the temporal sentence grounding task in thre
 ```
 python generate_charades_data.py
 ```
-If you have downloaded the .h5 data for the Charades-STA dataset, you can ignore this step. Preprocessed data will be put into the './data/Charades/h5py/' folder.
+Preprocessed data will be put into the './data/Charades/h5py/' folder.
 
 * Go to the '**./grounding/TACOS/data_preparation/**' folder, and run:
 ```
