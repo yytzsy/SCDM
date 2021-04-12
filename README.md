@@ -10,7 +10,7 @@ Temporal sentence grounding (TSG) in videos aims to detect and localize one targ
 ## Download Features and Example Preprocessed Data
 
 First, download the following files into the '**./data**' folder:
-* Extracted video features: [charades_i3d_rgb.hdf5](https://cloud.tsinghua.edu.cn/f/b17bc7e9f17b4d0f8179/?dl=1), [activitynet_c3d_fc6_stride_1s.hdf5](https://cloud.tsinghua.edu.cn/d/8cc1ca07bd3642e2972e/), [tacos_c3d_fc6_nonoverlap.hdf5](https://cloud.tsinghua.edu.cn/f/79ef2b6956084ab48416/?dl=1)
+* Extracted video features: [charades_i3d_rgb.hdf5](https://cloud.tsinghua.edu.cn/f/b17bc7e9f17b4d0f8179/?dl=1), [activitynet_c3d_fc6_stride_1s.hdf5](https://cloud.tsinghua.edu.cn/d/8cc1ca07bd3642e2972e/) (The data features are divided into 10 parts, you should download and merge the 10 parts into a whole feature file), [tacos_c3d_fc6_nonoverlap.hdf5](https://cloud.tsinghua.edu.cn/f/79ef2b6956084ab48416/?dl=1)
 * For glove word embeddings used in our work, please download [glove.840B.300d.zip](http://nlp.stanford.edu/data/glove.840B.300d.zip), and preprocess the word embedding .txt file to a glove.840B.300d_dict.npy file, making it a dict whose key is a word and the corresponding value is the 300-d word embedding. 
 
 ## Data Preprocessing
