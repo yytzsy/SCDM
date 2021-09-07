@@ -2,8 +2,9 @@
 Code for the paper: "Semantic Conditioned Dynamic Modulation for Temporal Sentence Grounding in Videos"
 
 ## requirements
-python 2.7
-tensorflow 1.14.0
+* python 2.7
+* tensorflow 1.14.0
+* keras 1.2.1
 
 
 ## Introduction
